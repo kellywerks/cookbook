@@ -1,7 +1,24 @@
-<h1 class ="jumbotron">Recipe for <span class='navigation'><%= @recipe.name %></span></h1>
+<h1 class ="jumbotron">Recipe for <span class='name'><%= @recipe.name %></span></h1>
 <p>
 <%= @recipe.text %>
-<br><br>A <%= @recipe.star %>✰ recipe.</p>
+<br><br>A <%= @recipe.star %>✰ recipe.
+<br>Tags: <span class="name">
+<% @recipe.tags.each do |tag| %>
+  <a href="/tags/<%= tag.id %>"><%= tag.name %>, </a>
+<% end %>
+</span>
+</p>
+
+<form action="/classifications/" method="post">
+  <input name="recipe_id" type="hidden" value="<%= @recipe.id %>">
+  <select id="tag_id" name="tag_id">
+    <% Tag.all.order(:name).each do |tag| %>
+      <option value = "<%= tag.id %>"><%= tag.name %></option>
+    <% end %>
+  </select>
+  <br><button>Add Tag to Recipe</button>
+</form>
+
 <p><a href='/recipes/<%= @recipe.id %>/edit' class='navigation'>Adjust this recipe accordingly!</a>
 <br><a href='/recipes/<%= @recipe.id %>' class='navigation'
       data-confirm="Are you sure you want to banish this recipe from the Cookbook forever?"

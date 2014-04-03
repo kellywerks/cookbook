@@ -33,7 +33,12 @@ class RecipesController < ApplicationController
 
   def update
     @recipe = Recipe.find(params[:id])
-    if @recipe.update(params[:recipe])
+    if Tag.find(params[:tag_id])
+      @new_tag = Tag.find(params[:tag_id])
+      p @new_tag
+      @recipe.tags << Tag.find(params[:tag_id])
+      redirect_to('/recipes')
+    elsif @recipe.update(params[:recipe])
       redirect_to('/recipes')
     else
       @recipe.errors.full_messages.each do |message|

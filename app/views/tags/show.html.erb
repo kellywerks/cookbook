@@ -2,7 +2,7 @@
 
 <ul>
 <% @tag.recipes.each do |recipe| %>
-  <li><a href='/recipes/<%= recipe.id %>'><%= recipe.name %></a></li>
+  <li><a href='/recipes/<%= recipe.id %>'><%= recipe.name %></a> |<%= link_to " Delete tag", classifications_path(1, :recipe_id => recipe.id, :tag_id => @tag.id ), :method => :delete %></li>
 <% end %>
 </ul>
 

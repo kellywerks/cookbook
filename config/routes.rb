@@ -16,4 +16,7 @@ Cookbook::Application.routes.draw do
   match('/tags/:id', {:via => [:patch, :put], :to => 'tags#update'})
   match('/tags/:id', {:via => :delete, :to => 'tags#destroy'})
 
+  match('classifications', {:via => :delete, :to => 'classifications#destroy'})
+  match('/classifications/', {:via => :post, :to => 'classifications#create'})
+
 end
