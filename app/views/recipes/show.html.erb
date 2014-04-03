@@ -1,0 +1,10 @@
+<h1 class ="jumbotron">Recipe for <span class='navigation'><%= @recipe.name %></span></h1>
+<p>
+<%= @recipe.text %>
+<br><br>A <%= @recipe.star %>✰ recipe.</p>
+<p><a href='/recipes/<%= @recipe.id %>/edit' class='navigation'>Adjust this recipe accordingly!</a>
+<br><a href='/recipes/<%= @recipe.id %>' class='navigation'
+      data-confirm="Are you sure you want to banish this recipe from the Cookbook forever?"
+      data-method="delete"
+      rel="nofollow">Delete <%= @recipe.name %></a>
+<br><a href="/recipes/">Return to the Cookbook Index</a></p>

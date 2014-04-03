@@ -1,0 +1,8 @@
+<h1 class="jumbotron">Edit <span class="name"><%= @recipe.name %></spam></h1>
+
+<form action="/recipes/<%= @recipe.id %>" method="post">
+  <input name='_method' type="hidden" value="patch">
+  <%= render('form') %>
+
+  <br><br><button>Put Adjusted Recipe Back into Cookbook</button>
+</form>
