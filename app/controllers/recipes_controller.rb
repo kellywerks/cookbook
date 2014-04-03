@@ -1,6 +1,11 @@
 class RecipesController < ApplicationController
   def index
-    @recipes = Recipe.all
+    if params[:search] != "" && !params[:search].nil?
+      p params[:search]
+      @recipes = Recipe.basic_search(params[:search])
+    else
+      @recipes = Recipe.all
+    end
     render('recipes/index.html.erb')
   end
 
