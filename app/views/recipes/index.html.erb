@@ -10,5 +10,16 @@
   <input placeholder="Search all Recipes!" name="search" type="text" value=""></input>
   <button>Search!</button>
 </form></p>
-<p><a href="/recipes/new">Add a Recipe to the Cookbook</a></p>
+<p><br><h4>Sort Recipes:</h4><form action="/recipes/" method="get">
+  <select id="asc_desc" name="asc_desc">
+    <option value = "asc" selected="selected">Ascending</option>
+    <option value = "desc">Descending</option>
+  </select>
+  <select id="field" name="field">
+    <option value="name" selected="selected">Name</option>
+    <option value="star">Rating</option>
+  </select>
+  <br><button>Sort!</button>
+</form></p>
+<p><br><a href="/recipes/new">Add a Recipe to the Cookbook</a></p>
 <p><a href="/tags/">View all Cookbook Tags</a></p>

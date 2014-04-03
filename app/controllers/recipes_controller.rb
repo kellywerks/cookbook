@@ -1,8 +1,11 @@
 class RecipesController < ApplicationController
   def index
     if params[:search] != "" && !params[:search].nil?
-      p params[:search]
       @recipes = Recipe.basic_search(params[:search])
+    elsif params[:asc_desc] != nil
+      p params[:asc_desc]
+      p params[:field]
+      @recipes = Recipe.order(params[:field].to_sym => params[:asc_desc].to_sym)
     else
       @recipes = Recipe.all
     end
