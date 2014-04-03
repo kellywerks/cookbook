@@ -1,0 +1,8 @@
+<h1 class="jumbotron">Edit <span class="name"><%= @tag.name %></spam></h1>
+
+<form action="/tags/<%= @tag.id %>" method="post">
+  <input name='_method' type="hidden" value="patch">
+  <label for="tag_name">Tag Name</label>
+  <input id="tag_name" name = "tag[name]" type="text" value="<%= @tag.name %>"></input>
+  <br><br><button>Put Adjusted Tag Back into Cookbook</button>
+</form>

@@ -1,0 +1,7 @@
+<h1 class="jumbotron">Add a <span class="name">Tag</span></h1>
+
+<form action="/tags/<%= @tag.id %>" method="post">
+  <label for="tag_name">Tag Name</label>
+  <input id="tag_name" name = "tag[name]" type="text" value="<%= @tag.name %>"></input>
+  <br><br><button>Add Tag to Cookbook</button>
+</form>

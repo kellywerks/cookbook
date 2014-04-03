@@ -1,0 +1,19 @@
+<h1 class ="jumbotron"> <span class='name'><%= @tag.name %></span> Recipes</h1>
+
+<ul>
+<% @tag.recipes.each do |recipe| %>
+  <li><a href='/recipes/<%= recipe.id %>'><%= recipe.name %></a></li>
+<% end %>
+</ul>
+
+<% if @tag.recipes.length == 0 %>
+  There are no recipes tagged with <span class='name'><%= @tag.name %>
+<% end %>
+
+<p><br><a href='/tags/<%= @tag.id %>/edit' class='navigation'>Adjust this tag accordingly!</a>
+<br><a href='/tags/<%= @tag.id %>' class='navigation'
+      data-confirm="Are you sure you want to banish this tag from the Cookbook forever?"
+      data-method="delete"
+      rel="nofollow">Delete <%= @tag.name %></a>
+<br><br><a href="/tags/">Return to the Tag Index</a>
+<br><a href="/recipes/">Return to the Cookbook Index</a></p>

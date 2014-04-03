@@ -1,0 +1,9 @@
+<h1 class="jumbotron">Tags</h1>
+
+<ul>
+  <% @tags.each do |tag| %>
+    <li><a href="/tags/<%= tag.id %>"><%= tag.name %></a></li>
+  <% end %>
+</ul>
+
+<p><a href="/tags/new">Add a Tag to the Cookbook</a></p>
