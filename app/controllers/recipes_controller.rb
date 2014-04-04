@@ -41,9 +41,7 @@ class RecipesController < ApplicationController
 
   def update
     @recipe = Recipe.find(params[:id])
-    if Tag.find(params[:tag_id])
-      @new_tag = Tag.find(params[:tag_id])
-      p @new_tag
+    if params[:tag_id]
       @recipe.tags << Tag.find(params[:tag_id])
       redirect_to('/recipes')
     elsif @recipe.update(params[:recipe])

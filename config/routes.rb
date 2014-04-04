@@ -19,4 +19,5 @@ Cookbook::Application.routes.draw do
   match('classifications', {:via => :delete, :to => 'classifications#destroy'})
   match('/classifications/', {:via => :post, :to => 'classifications#create'})
 
+  match('/ratings/', {:via => :post, :to => 'ratings#create'})
 end

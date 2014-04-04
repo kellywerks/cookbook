@@ -4,19 +4,6 @@
   <br><textarea id="recipe_text" name="recipe[text]" placeholder="Enter recipe here!" rows="25" cols ="50">
   <%= @recipe.text %>
   </textarea>
-  <br><label for="recipe_star">Recipe Rating:</label>
-  <select id="recipe_star" name="recipe[star]">
-    <% if @recipe.star %>
-      <option selected value="<%= @recipe.star %>"><%= @recipe.star %> ✰s</option>
-    <% else %>
-      <option selected disabled>Choose One</option>
-    <% end %>
-    <option value = 1>✰</option>
-    <option value = 2>✰✰</option>
-    <option value = 3>✰✰✰</option>
-    <option value = 4>✰✰✰✰</option>
-    <option value = 5>✰✰✰✰✰</option>
-  </select>
 
 
 

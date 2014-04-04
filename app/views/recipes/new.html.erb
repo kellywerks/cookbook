@@ -4,6 +4,7 @@
 
 <p><form action="/recipes" method="post">
   <%= render('form') %>
+  <input id="recipe_rating" name="recipe[star]" type="hidden" value=0.0>
 
   <br><br><button>Create Recipe</button>
 </form></p>

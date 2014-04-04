@@ -1,7 +1,11 @@
 <h1 class ="jumbotron">Recipe for <span class='name'><%= @recipe.name %></span></h1>
 <p>
 <%= @recipe.text %>
-<br><br>A <%= @recipe.star %>✰ recipe.
+<% if !@recipe.average_rating.nan? %>
+  <br><br>User Rating: <%= sprintf("%0.1f", @recipe.average_rating) %>✰.
+<% else %>
+  <br><br>No User Ratings Yet!
+<% end %>
 <br>Tags: <span class="name">
 <% @recipe.tags.each do |tag| %>
   <a href="/tags/<%= tag.id %>"><%= tag.name %>, </a>
@@ -9,7 +13,7 @@
 </span>
 </p>
 
-<form action="/classifications/" method="post">
+<p><form action="/classifications/" method="post">
   <input name="recipe_id" type="hidden" value="<%= @recipe.id %>">
   <select id="tag_id" name="tag_id">
     <% Tag.all.order(:name).each do |tag| %>
@@ -17,7 +21,19 @@
     <% end %>
   </select>
   <br><button>Add Tag to Recipe</button>
-</form>
+</form></p>
+
+<p><form action="/ratings/" method = "post">
+  <input name="recipe_id" type="hidden" value="<%= @recipe.id %>">
+  <select id="rating" name="rating">
+    <option value = 1>✰</option>
+    <option value = 2>✰✰</option>
+    <option value = 3>✰✰✰</option>
+    <option value = 4>✰✰✰✰</option>
+    <option value = 5>✰✰✰✰✰</option>
+  </select>
+  <br><button>Rate This Recipe!</button>
+</form></p>
 
 <p><a href='/recipes/<%= @recipe.id %>/edit' class='navigation'>Adjust this recipe accordingly!</a>
 <br><a href='/recipes/<%= @recipe.id %>' class='navigation'

@@ -3,4 +3,8 @@ class Recipe < ActiveRecord::Base
   has_many :ratings
 
   validates :name, :presence => true, :uniqueness => true
+
+  def average_rating
+    self.ratings.sum(&:rating).to_f/self.ratings.length.to_f
+  end
 end
