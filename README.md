@@ -12,4 +12,4 @@ Let's make a site for sharing recipes.  All user stories completed (minus the de
 * *DEPRECATED* As a cook, I want to see some new recipes mixed in with the highest-rated ones, so that I can give new recipes with no or few ratings a try. (Hint: make a method that creates an arbitrary weighting between the average number of stars a recipe has, and how old it is.)
 * *DONE* As a cook, I want to search through recipes, so that I can find something with a particular ingredient or word.
 
-This was super fun!
+This was super duper fun!
