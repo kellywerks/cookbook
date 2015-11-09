@@ -2,7 +2,7 @@
 
 ===Recipes
 ---
-Let's make a site for sharing recipes.
+Let's make a site for sharing recipes.  All user stories completed (minus the deprecated one!)
 
 * *DONE* As a contributor, I want to post new recipes, so that I can share them with others.
 * *DONE* As a contributor, I want to tag my recipes, so that they are easier to find. (Hint: a recipe has many tags, and a tag has many recipes. Another hint: don't be afraid to create several actions for this: one page for creating tags, one page for creating recipes, one page for adding tags to a recipe.)
